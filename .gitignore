@@ -1,0 +1,142 @@
+# ---------------------------------------------------------------------------
+# Local working directory -- never published
+# ---------------------------------------------------------------------------
+local/
+
+# ---------------------------------------------------------------------------
+# Active-space integrals exceeding GitHub's 100 MiB per-file limit.
+# Kept locally, distributed on request. See README section 1.3.
+# ---------------------------------------------------------------------------
+data/as_hamiltonians/RC_51_50/
+data/as_hamiltonians/TS_51_50/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+.conda/
+conda-meta/
+
+# Testing / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ---------------------------------------------------------------------------
+# Jupyter
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# ---------------------------------------------------------------------------
+# Quantum chemistry / HPC scratch output
+# ---------------------------------------------------------------------------
+# PySCF
+*.chkfile
+tmp*/
+pyscf-*.log
+
+# Q-Chem
+*.fchk
+qchem*/
+*.out.tmp
+
+# DMRG / MPS scratch (block2, in-house code)
+scratch/
+node*/
+*.mps
+*.npy.tmp
+F0T*.npy
+FCIDUMP.tmp
+
+# SLURM / batch scheduler
+slurm-*.out
+*.sbatch.log
+*.e[0-9]*
+*.o[0-9]*
+core.[0-9]*
+
+# ---------------------------------------------------------------------------
+# Large scratch artifacts. NOTE: *.npz, *.chk, *.h5 and *.tar.gz are NOT ignored
+# -- they are the published data (data/as_hamiltonians, data/uhf_checkpoints,
+# data/adapt_circuits).
+# ---------------------------------------------------------------------------
+*.pkl
+*.pickle
+*.zip
+
+# ---------------------------------------------------------------------------
+# LaTeX build artifacts
+# ---------------------------------------------------------------------------
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.toc
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*.bcf
+# NOTE: LaTeX also produces *.out, but that clashes with Q-Chem/ORCA output
+# files we may want to track. Ignore it per-directory instead, e.g. report/*.out
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+*:Zone.Identifier
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Secrets / credentials (IBM Quantum tokens etc.)
+# ---------------------------------------------------------------------------
+*.token
+.qiskit/
+qiskit-ibm.json
+credentials*
+*secret*
+*.pem
+*.key

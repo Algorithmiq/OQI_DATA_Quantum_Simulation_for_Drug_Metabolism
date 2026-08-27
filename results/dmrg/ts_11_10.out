@@ -1,0 +1,886 @@
+    Apptainer 1.4.5 loaded. This package was installed with spack using gcc
+11.4.1.
+
+    Spack options were:
+    +libsubid+network~suid
+
+-------------------------------------------------------------------------------
+There are messages associated with the following module(s):
+-------------------------------------------------------------------------------
+
+use.spack-core:
+spack modules loaded. Full unload maybe required via: unload use.spack-core
+Any other use.spack modules will also need to be unloaded in a similar manner
+
+-------------------------------------------------------------------------------
+
+[rc] CAS(11,10)  2Sz=1  ecore=-2976.1435933994  ranks=4 threads/rank=16 ooc=True
+[qops] MPI np=4 · GPU=on · device collectives: NCCL (NVLink/GPUDirect)
+[qops] A/B host-offload: ON (stubs + pager spill)
+
+################## Warmup summary ##################
+  Rank 0: Host RAM sweep-peak 0 MB · VmHWM 652 MB   VRAM op-pool peak 0 MB · total peak 0 MB
+  Rank 1: Host RAM sweep-peak 0 MB · VmHWM 649 MB   VRAM op-pool peak 0 MB · total peak 0 MB
+  Rank 2: Host RAM sweep-peak 0 MB · VmHWM 652 MB   VRAM op-pool peak 0 MB · total peak 0 MB
+  Rank 3: Host RAM sweep-peak 0 MB · VmHWM 648 MB   VRAM op-pool peak 0 MB · total peak 0 MB
+  OOC scratch  65 MB on disk  (sum over all ranks)
+  Timings (wall 0.9 s)
+    build                    [CPU]             0.0 s
+    matvec                   [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    decimate                 [CPU]             0.1 s
+    grow                     [GPU·CPU·IO]     0.8 s   (GPU 0.0 · IO 0.0 · CPU 0.8)
+      gpu_proj (project)     [GPU·CPU·IO]     0.0 s
+      construct (cpu path)   [CPU]             0.1 s
+      reduceSH (MPI)         [CPU·IO]         0.7 s
+        xfer (NCCL/host)     [IO]              0.7 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 1/20 (forward) summary ##################
+  Energy       -2987.3316660442 Ha
+  Discarded weight  1.956e-07  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 834 MB · VmHWM 861 MB   VRAM op-pool peak 3 MB · total peak 1686 MB
+  Rank 1: Host RAM sweep-peak 836 MB · VmHWM 864 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Rank 2: Host RAM sweep-peak 834 MB · VmHWM 864 MB   VRAM op-pool peak 3 MB · total peak 1686 MB
+  Rank 3: Host RAM sweep-peak 832 MB · VmHWM 864 MB   VRAM op-pool peak 3 MB · total peak 1682 MB
+  Block stores (peak bond, per rank): distributed A/B share 4 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  101 MB on disk  (sum over all ranks)
+  Timings (wall 1.1 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.8 s   (GPU 0.5 · IO 0.0 · CPU 0.3)
+      gemm                   [GPU]             0.5 s   (0.05 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.3 s
+        planEnum             [CPU]             0.1 s
+        (other)              [CPU]             0.2 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 2/20 (backward) summary ##################
+  Energy       -2987.3316675073 Ha
+  dE vs prev sweep  -1.463e-06 Ha
+  Discarded weight  3.882e-07  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 842 MB · VmHWM 871 MB   VRAM op-pool peak 4 MB · total peak 1690 MB
+  Rank 1: Host RAM sweep-peak 842 MB · VmHWM 871 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 2: Host RAM sweep-peak 840 MB · VmHWM 871 MB   VRAM op-pool peak 4 MB · total peak 1690 MB
+  Rank 3: Host RAM sweep-peak 840 MB · VmHWM 870 MB   VRAM op-pool peak 3 MB · total peak 1686 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  71 MB on disk  (sum over all ranks)
+  Timings (wall 0.7 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.4 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.08 TFLOPS total · 0.02/GPU)
+      host                   [CPU]             0.1 s
+        planEnum             [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 3/20 (forward) summary ##################
+  Energy       -2987.3316675158 Ha
+  dE vs prev sweep  -8.538e-09 Ha
+  Discarded weight  3.871e-07  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 844 MB · VmHWM 873 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 845 MB · VmHWM 874 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 845 MB · VmHWM 874 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 845 MB · VmHWM 877 MB   VRAM op-pool peak 3 MB · total peak 1688 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  71 MB on disk  (sum over all ranks)
+  Timings (wall 0.6 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.4 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.08 TFLOPS total · 0.02/GPU)
+      host                   [CPU]             0.1 s
+        planEnum             [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 4/20 (backward) summary ##################
+  Energy       -2987.3316675195 Ha
+  dE vs prev sweep  -3.631e-09 Ha
+  Discarded weight  3.860e-07  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 846 MB · VmHWM 876 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 847 MB · VmHWM 876 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 848 MB · VmHWM 877 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 849 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  70 MB on disk  (sum over all ranks)
+  Timings (wall 0.6 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.4 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.08 TFLOPS total · 0.02/GPU)
+      host                   [CPU]             0.1 s
+        planEnum             [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 5/20 (forward) summary ##################
+  Energy       -2987.3316675195 Ha
+  dE vs prev sweep  +6.494e-10 Ha
+  Discarded weight  3.855e-07  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 849 MB · VmHWM 879 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 852 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 849 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 852 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  70 MB on disk  (sum over all ranks)
+  Timings (wall 1.3 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.4 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.08 TFLOPS total · 0.02/GPU)
+      host                   [CPU]             0.1 s
+        planEnum             [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+[qops] converged after sweep 5/20: |dE| = 6.494e-10 < e_conv = 1.000e-09
+
+################## Run total ##################
+  5 sweep(s) + warmup: 5.3 s wall · final E -2987.3316675195 Ha · VmHWM 879 MB
+  ooc async residual wait (not hidden behind compute): save 0.0 · load 0.0 s (0% of runtime)
+[rc] main run done: E = -2987.3316675195 Ha
+[qops] MPI np=4 · GPU=on · device collectives: NCCL (NVLink/GPUDirect)
+[qops] A/B host-offload: ON (stubs + pager spill)
+
+################## Sweep 1/2 (backward) summary ##################
+  Energy       1000000000000000000.0000000000 Ha
+  Discarded weight  0.000e+00  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 840 MB · VmHWM 879 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 842 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 839 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 843 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  OOC scratch  71 MB on disk  (sum over all ranks)
+  Timings (wall 0.2 s)
+    build                    [CPU]             0.0 s
+    matvec                   [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 2/2 (forward) summary ##################
+  Energy       1000000000000000000.0000000000 Ha
+  dE vs prev sweep  +0.000e+00 Ha
+  Discarded weight  0.000e+00  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 840 MB · VmHWM 879 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 841 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 838 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 843 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  OOC scratch  71 MB on disk  (sum over all ranks)
+  Timings (wall 0.2 s)
+    build                    [CPU]             0.0 s
+    matvec                   [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Run total ##################
+  2 sweep(s) + warmup: 0.3 s wall · final E 1000000000000000000.0000000000 Ha · VmHWM 879 MB
+  ooc async residual wait (not hidden behind compute): save 0.0 · load 0.0 s (2% of runtime)
+[qops] <S^2> = 0.776532  (S = 0.5132)  [assumes identical alpha/beta spatial orbitals — with UHF orbitals this is NOT the physical <S^2>; see qops/measure.hpp]
+[qops] single-orbital entropy: total 0.6638 · max 0.0999 @ orbital 5 · spin-orbital total 0.7127
+[qops] S1 = 0.037 0.077 0.023 0.050 0.094 0.100 0.091 0.070 0.057 0.064
+[qops] MPI np=4 · GPU=on · device collectives: NCCL (NVLink/GPUDirect)
+[qops] A/B host-offload: ON (stubs + pager spill)
+
+################## Sweep 1/2 (backward) summary ##################
+  Energy       1000000000000000000.0000000000 Ha
+  Discarded weight  0.000e+00  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 874 MB · VmHWM 906 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 842 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 840 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 842 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  OOC scratch  70 MB on disk  (sum over all ranks)
+  Timings (wall 0.3 s)
+    build                    [CPU]             0.0 s
+    matvec                   [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    decimate                 [CPU]             0.1 s
+      share (MPI wait)       [CPU·IO]         0.1 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 2/2 (forward) summary ##################
+  Energy       1000000000000000000.0000000000 Ha
+  dE vs prev sweep  +0.000e+00 Ha
+  Discarded weight  0.000e+00  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 872 MB · VmHWM 906 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 842 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 841 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 843 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  OOC scratch  71 MB on disk  (sum over all ranks)
+  Timings (wall 0.2 s)
+    build                    [CPU]             0.0 s
+    matvec                   [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Run total ##################
+  2 sweep(s) + warmup: 0.5 s wall · final E 1000000000000000000.0000000000 Ha · VmHWM 906 MB
+  ooc async residual wait (not hidden behind compute): save 0.0 · load 0.0 s (2% of runtime)
+[qops] <S^2> = 0.776532  (S = 0.5132)  [assumes identical alpha/beta spatial orbitals — with UHF orbitals this is NOT the physical <S^2>; see qops/measure.hpp]
+[qops] single-orbital entropy: total 0.6638 · max 0.0999 @ orbital 5 · spin-orbital total 0.7127
+[qops] S1 = 0.037 0.077 0.023 0.050 0.094 0.100 0.091 0.070 0.057 0.064
+[rc] measurements done (RDMs + NO occupations saved)
+[qops] MPI np=4 · GPU=on · device collectives: NCCL (NVLink/GPUDirect)
+[qops] A/B host-offload: ON (stubs + pager spill)
+
+################## Sweep 1/10 (backward) summary ##################
+  Energy       -2987.3316669934 Ha
+  Discarded weight  1.426e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 877 MB · VmHWM 908 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 848 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 846 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 848 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  58 MB on disk  (sum over all ranks)
+  Timings (wall 0.6 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.05 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 2/10 (forward) summary ##################
+  Energy       -2987.3316665404 Ha
+  dE vs prev sweep  +4.530e-07 Ha
+  Discarded weight  1.396e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 876 MB · VmHWM 908 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 845 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 844 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 847 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  45 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.05 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 3/10 (backward) summary ##################
+  Energy       -2987.3316665404 Ha
+  dE vs prev sweep  +5.009e-08 Ha
+  Discarded weight  1.342e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 878 MB · VmHWM 908 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 845 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 844 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 847 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  45 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.06 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 4/10 (forward) summary ##################
+  Energy       -2987.3316665404 Ha
+  dE vs prev sweep  +1.374e-09 Ha
+  Discarded weight  1.342e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 879 MB · VmHWM 909 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 847 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 845 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 848 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  44 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.05 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 5/10 (backward) summary ##################
+  Energy       -2987.3316665404 Ha
+  dE vs prev sweep  +5.488e-09 Ha
+  Discarded weight  1.338e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 879 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 847 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 845 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 848 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  44 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.05 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 6/10 (forward) summary ##################
+  Energy       -2987.3316665404 Ha
+  dE vs prev sweep  +5.016e-10 Ha
+  Discarded weight  1.337e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 879 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 847 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 846 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 848 MB · VmHWM 881 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  45 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.06 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+[qops] converged after sweep 6/10: |dE| = 5.016e-10 < e_conv = 1.000e-09
+
+################## Run total ##################
+  6 sweep(s) + warmup: 3.2 s wall · final E -2987.3316665404 Ha · VmHWM 910 MB
+  ooc async residual wait (not hidden behind compute): save 0.0 · load 0.0 s (0% of runtime)
+[rc] ladder BD=150 done
+[qops] MPI np=4 · GPU=on · device collectives: NCCL (NVLink/GPUDirect)
+[qops] A/B host-offload: ON (stubs + pager spill)
+
+################## Sweep 1/10 (backward) summary ##################
+  Energy       -2987.3316652101 Ha
+  Discarded weight  6.706e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 878 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 847 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 844 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 850 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 1 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  34 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.03 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 2/10 (forward) summary ##################
+  Energy       -2987.3316570429 Ha
+  dE vs prev sweep  +8.167e-06 Ha
+  Discarded weight  6.045e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 875 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 845 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 843 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 849 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  23 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+      formPQ                 [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.02 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 3/10 (backward) summary ##################
+  Energy       -2987.3316570429 Ha
+  dE vs prev sweep  +1.172e-07 Ha
+  Discarded weight  5.721e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 877 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 846 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 842 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 846 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  23 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.02 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 4/10 (forward) summary ##################
+  Energy       -2987.3316570429 Ha
+  dE vs prev sweep  +2.610e-10 Ha
+  Discarded weight  5.720e-06  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 876 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 846 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 843 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 848 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  23 MB on disk  (sum over all ranks)
+  Timings (wall 0.5 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.02 TFLOPS total · 0.01/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+[qops] converged after sweep 4/10: |dE| = 2.610e-10 < e_conv = 1.000e-09
+
+################## Run total ##################
+  4 sweep(s) + warmup: 1.9 s wall · final E -2987.3316570429 Ha · VmHWM 910 MB
+  ooc async residual wait (not hidden behind compute): save 0.0 · load 0.0 s (1% of runtime)
+[rc] ladder BD=100 done
+[qops] MPI np=4 · GPU=on · device collectives: NCCL (NVLink/GPUDirect)
+[qops] A/B host-offload: ON (stubs + pager spill)
+
+################## Sweep 1/10 (backward) summary ##################
+  Energy       -2987.3316543651 Ha
+  Discarded weight  8.573e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 875 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 842 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 843 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 849 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  15 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.3 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.01 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 2/10 (forward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  +7.534e-05 Ha
+  Discarded weight  4.602e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 875 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 844 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 844 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 845 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.00 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+        fap_exec             [GPU·IO]         0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 3/10 (backward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  +2.031e-06 Ha
+  Discarded weight  4.440e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 875 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 844 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 841 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 843 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.2 s   (0.00 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 4/10 (forward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  +1.857e-06 Ha
+  Discarded weight  4.254e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 876 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 844 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 842 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 847 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.1 s   (0.00 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 5/10 (backward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  -2.548e-07 Ha
+  Discarded weight  4.277e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 873 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 841 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 844 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 847 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.1 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.1 s   (0.01 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 6/10 (forward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  +2.196e-07 Ha
+  Discarded weight  4.249e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 875 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 846 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 843 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 847 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.1 s   (0.00 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 7/10 (backward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  +7.610e-07 Ha
+  Discarded weight  4.204e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 874 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 843 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 844 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 849 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.1 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.1 s   (0.01 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 8/10 (forward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  +8.864e-08 Ha
+  Discarded weight  4.195e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 875 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 844 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 843 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 846 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.1 s   (0.01 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 9/10 (backward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  -5.144e-07 Ha
+  Discarded weight  4.228e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 874 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 844 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 840 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 846 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.1 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.1 s   (0.01 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 10/10 (forward) summary ##################
+  Energy       -2987.3315790278 Ha
+  dE vs prev sweep  +3.619e-08 Ha
+  Discarded weight  4.225e-05  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 876 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 844 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 843 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 847 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  8 MB on disk  (sum over all ranks)
+  Timings (wall 0.4 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.2 s   (GPU 0.2 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.1 s   (0.01 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.1)
+      gpu_proj (project)     [GPU·CPU·IO]     0.1 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+[qops] WARNING: energy NOT converged after 10 sweeps: |dE| = 3.619e-08 >= e_conv = 1.000e-09
+
+################## Run total ##################
+  10 sweep(s) + warmup: 4.0 s wall · final E -2987.3315790278 Ha · VmHWM 910 MB
+  ooc async residual wait (not hidden behind compute): save 0.0 · load 0.0 s (0% of runtime)
+[rc] ladder BD=50 done
+[qops] MPI np=4 · GPU=on · device collectives: NCCL (NVLink/GPUDirect)
+[qops] A/B host-offload: ON (stubs + pager spill)
+
+################## Sweep 1/10 (backward) summary ##################
+  Energy       -2987.3315393980 Ha
+  Discarded weight  3.973e-04  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 870 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 841 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 840 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 843 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  5 MB on disk  (sum over all ranks)
+  Timings (wall 0.3 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.1 s   (GPU 0.1 · IO 0.0 · CPU 0.1)
+      gemm                   [GPU]             0.1 s   (0.00 TFLOPS total · 0.00/GPU)
+      host                   [CPU]             0.1 s
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+      gpu_proj (project)     [GPU·CPU·IO]     0.0 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 2/10 (forward) summary ##################
+  Energy       -2987.3312097268 Ha
+  dE vs prev sweep  +3.297e-04 Ha
+  Discarded weight  1.256e-04  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 871 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 841 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 839 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 843 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  3 MB on disk  (sum over all ranks)
+  Timings (wall 0.2 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.1 s   (GPU 0.1 · IO 0.0 · CPU 0.0)
+      gemm                   [GPU]             0.1 s   (0.00 TFLOPS total · 0.00/GPU)
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+      gpu_proj (project)     [GPU·CPU·IO]     0.0 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 3/10 (backward) summary ##################
+  Energy       -2987.3312097268 Ha
+  dE vs prev sweep  +1.609e-05 Ha
+  Discarded weight  1.129e-04  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 871 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 840 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 839 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 842 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  3 MB on disk  (sum over all ranks)
+  Timings (wall 0.2 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+      gpu_proj (project)     [GPU·CPU·IO]     0.0 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 4/10 (forward) summary ##################
+  Energy       -2987.3312097268 Ha
+  dE vs prev sweep  -5.774e-07 Ha
+  Discarded weight  1.133e-04  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 871 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 840 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 839 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 842 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  3 MB on disk  (sum over all ranks)
+  Timings (wall 0.2 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+      gpu_proj (project)     [GPU·CPU·IO]     0.0 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+
+################## Sweep 5/10 (backward) summary ##################
+  Energy       -2987.3312097268 Ha
+  dE vs prev sweep  +0.000e+00 Ha
+  Discarded weight  1.133e-04  (max over this sweep's decimations)
+  Rank 0: Host RAM sweep-peak 871 MB · VmHWM 910 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 1: Host RAM sweep-peak 841 MB · VmHWM 880 MB   VRAM op-pool peak 4 MB · total peak 1696 MB
+  Rank 2: Host RAM sweep-peak 838 MB · VmHWM 878 MB   VRAM op-pool peak 4 MB · total peak 1694 MB
+  Rank 3: Host RAM sweep-peak 841 MB · VmHWM 882 MB   VRAM op-pool peak 3 MB · total peak 1690 MB
+  Block stores (peak bond, per rank): distributed A/B share 0 MB (~K²M²/np) · owner cre/des 0 · S 0 MB (~KM²/np) · replicated floor 0 MB [stubs 0 (~KM) · H 0 (~M²)]
+  OOC scratch  3 MB on disk  (sum over all ranks)
+  Timings (wall 0.2 s)
+    build                    [CPU]             0.1 s
+    matvec                   [GPU·CPU·IO]     0.1 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+    decimate                 [CPU]             0.0 s
+    grow                     [GPU·CPU·IO]     0.0 s   (GPU 0.0 · IO 0.0 · CPU 0.0)
+      gpu_proj (project)     [GPU·CPU·IO]     0.0 s
+    predict                  [CPU]             0.0 s
+    ooc                      [IO]              0.0 s
+[qops] converged after sweep 5/10: |dE| = 0.000e+00 < e_conv = 1.000e-09
+
+################## Run total ##################
+  5 sweep(s) + warmup: 1.1 s wall · final E -2987.3312097268 Ha · VmHWM 910 MB
+  ooc async residual wait (not hidden behind compute): save 0.0 · load 0.0 s (1% of runtime)
+[rc] ladder BD=25 done
+
+==============================================================================
+RESULTS  P450 RC  CAS(11,10)  2Sz=1  ecore=-2976.1435933994
+          ranks = 4   threads/rank = 16   ooc = True
+==============================================================================
+
+Main run   BD = 200
+  E            = -2987.3316675195 Ha
+  DW           = 3.855e-07
+  sweeps       = 5   converged = True
+
+<S^2>
+  physical (with alpha/beta overlap) = 3.648802   (S = 1.4745; exact doublet 0.75)
+  same-basis convention (comparison) = 0.776532
+
+1-RDM      Tr dm1a = 6.000000   Tr dm1b = 5.000000
+RDM energy check (E = ecore + h.dm1 + 1/2 g.dm2):
+  reconstructed E = -2987.3316669628 Ha
+  DMRG E          = -2987.3316675195 Ha
+  difference      = 5.566e-07 Ha   (truncation-bounded; large => corrupt RDMs)
+NO occupations (total: eigenvalues of dm1a+dm1b, sum = 11.000000; alpha/beta: of dm1a / dm1b, sums = 6.000000 / 5.000000;
+                each set in its own eigenbasis -> per row total != alpha + beta):
+            total       alpha        beta
+  NO  1:  1.998148    0.999951    0.999590
+  NO  2:  1.996613    0.999489    0.998354
+  NO  3:  1.992108    0.999090    0.993380
+  NO  4:  1.983531    0.993733    0.991015
+  NO  5:  1.982054    0.991971    0.988767
+  NO  6:  0.998933    0.988378    0.009736
+  NO  7:  0.018320    0.010920    0.008206
+  NO  8:  0.012748    0.007396    0.004715
+  NO  9:  0.009505    0.005283    0.004331
+  NO 10:  0.008040    0.003790    0.001906
+
+Bond-dimension ladder:
+      BD              E (Ha)          DW
+     200   -2987.3316675195   3.855e-07
+     150   -2987.3316665404   1.337e-06
+     100   -2987.3316570429   5.720e-06
+      50   -2987.3315790278   4.225e-05
+      25   -2987.3312097268   1.133e-04
+
+Extrapolation (linear E(DW) -> 0, 5 points with DW > 0):
+  E(DW->0)           = -2987.3316867563 Ha
+  slope              = 4.0116e+00 Ha/DW
+  max |residual|     = 6.176e-05 Ha
+  best variational E = -2987.3316675195 Ha   (extrapolation gain = 1.924e-05 Ha)
+
+Per-rank peaks:
+  rank 0:  VmHWM 909 MB · VRAM peak 1694 MiB
+  rank 1:  VmHWM 880 MB · VRAM peak 1696 MiB
+  rank 2:  VmHWM 878 MB · VRAM peak 1694 MiB
+  rank 3:  VmHWM 881 MB · VRAM peak 1690 MiB
+
+Files written:
+  dm1a.npy
+  dm1b.npy
+  dm2aa.npy
+  dm2ab.npy
+  dm2bb.npy
+  no_occ.npy
+  no_occ_a.npy
+  no_occ_b.npy
+==============================================================================
