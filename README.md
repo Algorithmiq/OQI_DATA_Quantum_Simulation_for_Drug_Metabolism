@@ -515,7 +515,48 @@ and face-on reaction pathways in both the doublet and quartet spin states.
 | B3LYP-D4/cc-pVQZ RIJCOSX def2/J | -2997.49787 | -2997.47182 | 16.35 | 3.79 | 3.81 |
 | r2SCAN-3c | -2997.39089 | -2997.36975 | 13.27 | 3.79 | 3.81 |
 
-## 3.2 DMRG
+## 3.2 FNO-MP2 and FNO-CCSD
+
+| Method / Active Space | RC (Hartree) | TS (Hartree) | ΔE (kcal/mol) |
+|---|---:|---:|---:|
+| FNO-MP2 6ae 5be 4av 5bv (11e,10o) | -2987.34113 | -2987.32535 | 9.90 |
+| FNO-CCSD 6ae 5be 4av 5bv (11e,10o) | -2987.35522 | -2987.33145 | 14.91 |
+| FNO-CCSD+MP2 6ae 5be 4av 5bv (11e,10o) | -2991.85597 | -2991.82799 | 17.56 |
+| FNO-MP2 11ae 10be 9av 10bv (21e,20o) | -2987.38071 | -2987.36241 | 11.49 |
+| FNO-CCSD 11ae 10be 9av 10bv (21e,20o) | -2987.41916 | -2987.39284 | 16.52 |
+| FNO-CCSD+MP2 11ae 10be 9av 10bv (21e,20o) | -2991.88033 | -2991.85232 | 17.58 |
+| FNO-MP2 16ae 15be 14av 15bv (31e,30o) | -2987.42364 | -2987.40816 | 9.71 |
+| FNO-CCSD 16ae 15be 14av 15bv (31e,30o) | -2987.48617 | -2987.46349 | 14.24 |
+| FNO-CCSD+MP2 16ae 15be 14av 15bv (31e,30o) | -2991.90442 | -2991.87721 | 17.07 |
+| FNO-MP2 21ae 20be 19av 20bv (41e,40o) | -2987.46671 | -2987.45505 | 7.32 |
+| FNO-CCSD 21ae 20be 19av 20bv (41e,40o) | -2987.54665 | -2987.52790 | 11.77 |
+| FNO-CCSD+MP2 21ae 20be 19av 20bv (41e,40o) | -2991.92182 | -2991.89473 | 17.00 |
+| FNO-MP2 26ae 25be 24av 25bv (51e,50o) | -2987.52094 | -2987.50721 | 8.61 |
+| FNO-CCSD 26ae 25be 24av 25bv (51e,50o) | -2987.60981 | -2987.58934 | 12.85 |
+| FNO-CCSD+MP2 26ae 25be 24av 25bv (51e,50o) | -2991.93075 | -2991.90401 | 16.78 |
+| FNO-MP2 31ae 30be 29av 30bv (61e,60o) | -2987.59615 | -2987.58035 | 9.91 |
+| FNO-CCSD 31ae 30be 29av 30bv (61e,60o) | -2987.69833 | -2987.67347 | 15.60 |
+| FNO-CCSD+MP2 31ae 30be 29av 30bv (61e,60o) | -2991.94406 | -2991.91501 | 18.23 |
+| FNO-MP2 36ae 35be 34av 35bv (71e,70o) | -2987.65972 | -2987.65520 | 2.83 |
+| FNO-CCSD 36ae 35be 34av 35bv (71e,70o) | -2987.77105 | -2987.76559 | 3.43 |
+| FNO-CCSD+MP2 36ae 35be 34av 35bv (71e,70o) | -2991.95322 | -2991.93227 | 13.14 |
+| FNO-MP2 41ae 40be 39av 40bv (81e,80o) | -2987.75921 | -2987.74287 | 10.26 |
+| FNO-CCSD 41ae 40be 39av 40bv (81e,80o) | -2987.87860 | -2987.85585 | 14.28 |
+| FNO-CCSD+MP2 41ae 40be 39av 40bv (81e,80o) | -2991.96127 | -2991.93487 | 16.57 |
+| FNO-MP2 46ae 45be 44av 45bv (91e,90o) | -2987.85561 | -2987.83268 | 14.39 |
+| FNO-CCSD 46ae 45be 44av 45bv (91e,90o) | -2987.98460 | -2987.95476 | 18.73 |
+| FNO-CCSD+MP2 46ae 45be 44av 45bv (91e,90o) | -2991.97088 | -2991.94397 | 16.89 |
+| FNO-MP2 51ae 50be 49av 50bv (101e,100o) | -2987.94151 | -2987.93038 | 6.98 |
+| FNO-CCSD 51ae 50be 49av 50bv (101e,100o) | -2988.07353 | -2988.05173 | 13.68 |
+| FNO-CCSD+MP2 51ae 50be 49av 50bv (101e,100o) | -2991.97390 | -2991.94324 | 19.24 |
+
+### Canonical CCSD Reference
+
+| Method | RC (Hartree) | TS (Hartree) | ΔE (kcal/mol) |
+|---|---:|---:|---:|
+| CCSD/cc-pVDZ on -2987.322734 (cc-pVDZ/C + def2-TZVP/C on Fe) | -2992.13132 | -2992.11298 | 11.51 |
+
+## 3.3 DMRG
 
 `results/dmrg/`
 
