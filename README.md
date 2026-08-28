@@ -48,7 +48,9 @@ application is S-warfarin metabolised by CYP2C9.
   - [2.6 ADAPT-VMPE circuit construction](#26-adapt-vmpe-circuit-construction)
   - [2.7 SqDRIFT sampling and QSCI](#27-sqdrift-sampling-and-qsci)
 - [3. Results](#3-results)
-  - [3.1 DMRG](#31-dmrg)
+  - [3.1 DFT, HF, and MP2](#31-dft-hf-and-mp2)
+  - [3.2 FNO-MP2 and FNO-CCSD](#32-fno-mp2-and-fno-ccsd)
+  - [3.3 DMRG](#33-dmrg)
 
 The chain of dependencies is linear, with the active-space Hamiltonian as its
 central node:
