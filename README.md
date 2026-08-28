@@ -248,6 +248,15 @@ ADAPT-VMPE circuits for the active spaces:
 
 The circuits are created using Algorithmiq's proprietary software aurora and saved as json dictionaries. The current format of the circuits is tied to aurora but can be transformed into other formats upon request.
 
+The energy at each ADAPT iteration can be fetched with the following script:
+
+```python
+import json
+
+result = json.load(open(f"data/adapt_circuits/rc_11e_10o/results_99.json"))
+print(result["cur_energy"])
+```
+
 # 2. Methods
 
 How each calculation is carried out, starting from the data published here. The
