@@ -236,10 +236,17 @@ ssq, mult = spin_square_general(
 
 `data/adapt_circuits/`
 
-ADAPT-VMPE circuits for the CAS(11,10) RC and TS (20 qubits), as
-`rc_11e20q.tar.gz` and `ts_11e20q.tar.gz`.
+ADAPT-VMPE circuits for the active spaces:  
 
-*Documentation of the file format and the larger active spaces will be added.*
+| Directory | Active space | Spatial orbitals | Electrons (α, β) | Qubits |
+|---|---|---|---|---|
+| `rc_11e_10o`, `ts_11e_10o` | CAS(11,10) | 10 | (6, 5) | 20 | 
+| `rc_21e_20o`, `ts_21e_20o` | CAS(21,20) | 20 | (11, 10) | 40 | 
+| `rc_31e_30o`, `ts_31e_30o` | CAS(31,30) | 30 | (16, 15) | 60 | 
+| `rc_41e_40o`, `ts_41e_40o` | CAS(41,40) | 40 | (21, 20) | 80 | 
+| `rc_51e_50o`, `ts_51e_50o` | CAS(51,50) | 50 | (26, 25) | 100 |
+
+The circuits are created using Algorithmiq's proprietary software aurora and saved as json dictionaries. The current format of the circuits is tied to aurora but can be transformed into other formats upon request.
 
 # 2. Methods
 
